@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+import localFont from "next/font/local";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -11,17 +11,24 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
+const fusionPixel = localFont({
+  src: [
+    {
+      // path: "/fonts/fusion-pixel-12px.woff2",
+      path: "../../public/fonts/fusion-pixel-12px.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body>
+    <html lang="en">
+      <body className={`${fusionPixel.className}`}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
