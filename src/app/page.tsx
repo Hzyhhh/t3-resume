@@ -6,6 +6,7 @@ import { headers } from "next/headers";
 import { api, HydrateClient } from "~/trpc/server";
 
 import { Section } from "./_components/MenuDialog";
+import Resume from "./_components/Resume";
 
 export default async function Home() {
   // const session = await auth();
@@ -26,7 +27,10 @@ export default async function Home() {
   return (
     <HydrateClient>
       <div className="h-screen w-full snap-y snap-mandatory overflow-y-scroll">
-        <Section title="个人简历">{/* <div>个人简历</div> */}</Section>
+        <Section title="个人简历">
+          <Resume />
+          {/* <div>个人简历</div> */}
+        </Section>
         <Section title="技能">
           {/* <h2 className="text-2xl font-bold">第二页内容</h2> */}
           <p>这里是第二页的详细内容</p>
