@@ -41,7 +41,7 @@ export default async function Home() {
         </Section>
 
         {/* 固定在右下角的访问统计 */}
-        <div className="fixed right-8 bottom-8 rounded-lg bg-white/80 p-4 shadow-lg backdrop-blur-sm dark:bg-black/80">
+        <div className="fixed left-8 bottom-8 rounded-lg bg-white/80 p-4 shadow-lg backdrop-blur-sm dark:bg-black/80">
           <p>总访问量：{stats.totalViews}</p>
           <p>独立访客：{stats.uniqueVisitors}</p>
         </div>
