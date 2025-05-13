@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import { api, HydrateClient } from "~/trpc/server";
 
 import { Section } from "./_components/MenuDialog";
-import Resume from "./_components/Resume";
+import Project from "./_components/Project.mobile";
 
 export default async function Home() {
   // const session = await auth();
@@ -17,6 +17,14 @@ export default async function Home() {
     headersList.get("cf-connecting-ip") ?? // Cloudflare
     "unknown";
   const userAgent = headersList.get("user-agent") ?? "unknown";
+
+  // 判断是否为移动端
+  const isMobile = /mobile|android|iphone|ipad|ipod/i.test(userAgent);
+
+  // 动态导入对应组件
+  const Resume = isMobile
+    ? (await import("./_components/Resume.mobile")).default
+    : (await import("./_components/Resume")).default;
 
   // 记录访问
   await api.pageView.recordView.call(null, { ip, userAgent });
@@ -29,11 +37,11 @@ export default async function Home() {
       <div className="h-screen w-full snap-y snap-mandatory overflow-y-scroll">
         <Section title="个人简历">
           <Resume />
-          {/* <div>个人简历</div> */}
         </Section>
-        <Section title="技能">
+        <Section title="项目经历">
           {/* <h2 className="text-2xl font-bold">第二页内容</h2> */}
-          <p>这里是第二页的详细内容</p>
+          {/* <p>这里是第二页的详细内容</p> */}
+          {isMobile && <Project />}
         </Section>
         <Section title="作品集">
           {/* <h2 className="text-2xl font-bold">第三页内容</h2> */}
@@ -41,7 +49,7 @@ export default async function Home() {
         </Section>
 
         {/* 固定在右下角的访问统计 */}
-        <div className="fixed left-8 bottom-8 rounded-lg bg-white/80 p-4 shadow-lg backdrop-blur-sm dark:bg-black/80">
+        <div className="fixed bottom-8 left-8 rounded-lg bg-white/80 p-4 shadow-lg backdrop-blur-sm dark:bg-black/80">
           <p>总访问量：{stats.totalViews}</p>
           <p>独立访客：{stats.uniqueVisitors}</p>
         </div>
