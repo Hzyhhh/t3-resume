@@ -1,22 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import MotionText from "./MotionText";
-
-// 工作经历数据
-const workExperiences = [
-  {
-    time: "至今 ～ 2022.07",
-    company: "优特电力科技股份有限公司",
-    title: "Web前端工程师",
-    desc: "作为核心开发成员，我负责多个关键模块的设计与实现。",
-  },
-  {
-    time: "2022.06 ～ 2019.07 ",
-    company: "远光软件股份有限公司",
-    title: "Web前端工程师",
-    desc: "参与多个Web与移动端项目，积累了丰富的实战经验。",
-  },
-];
+import Experiences from "./Experiences.mobile";
 
 // 项目经历数据
 const projectExperiences = [
@@ -51,57 +36,42 @@ const projectExperiences = [
 const Resume = () => {
   return (
     <div className="flex h-screen items-start gap-8">
-      {/* 左侧照片 */}
-      <div className="flex h-full flex-col">
-        <Image
-          src="/images/IMG_4154.JPG"
-          alt=""
-          width={350}
-          height={350}
-          className="rounded-lg object-cover"
-          draggable={false}
-        />
+      {/* 左侧内容 */}
+      <div className="h-full flex w-64 flex-col">
+        <div className="flex justify-center">
+          <Image
+            src="/images/IMG_4154.JPG"
+            alt=""
+            width={250}
+            height={250}
+            className="rounded-lg object-cover"
+            draggable={false}
+          />
+        </div>
+        <h1 className="mt-4 text-center text-4xl">黄梓阳</h1>
 
-        <h1 className="mt-12 text-center text-4xl">黄梓阳</h1>
+        {/* 左侧：工作经历时间轴 */}
+        <Experiences />
       </div>
       {/* 右侧文字 */}
       <div className="flex-1">
         <MotionText
-          className="mb-12"
+          className="mb-8"
           text="2015 ～ 2019. 北京理工大学珠海学院. 软件工程"
         />
         <MotionText text="我是Web前端/RN开发工程师，我具备扎实的技术基础和丰富的实战经验。在工业应用领域，我熟悉各种硬件集成和数据处理技术，能够独立完成从需求分析到产品交付的全过程。我注重代码质量和性能优化，同时具备良好的团队协作能力和沟通技巧。我热爱技术创新，不断学习新技术并应用到实际项目中。" />
 
-        <div className="mt-12 flex gap-8">
-          {/* 左侧：工作经历时间轴 */}
-          <div className="w-1/2">
-            <h2 className="mb-4 text-2xl font-bold">工作经历</h2>
-            <ol className="relative border-l-2 border-gray-300">
-              {workExperiences.map((exp, idx) => (
-                <li className="relative mb-8 pl-6" key={idx}>
-                  <span className="absolute top-1.5 -left-2.5 h-4.5 w-4.5 rounded-full bg-blue-500 ring-4 ring-white"></span>
-                  <h3 className="text-lg font-semibold">
-                    {exp.time} | {exp.company}
-                  </h3>
-                  <div className="text-gray-600">
-                    {exp.title}，{exp.desc}
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
+        <div className="mt-8 flex gap-8">
           {/* 右侧：项目经历 */}
-          <div className="w-1/2">
-            <h2 className="mb-4 text-2xl font-bold">项目经历</h2>
-            <ul className="space-y-6">
-              {projectExperiences.map((proj, idx) => (
-                <li key={idx}>
-                  <h3 className="text-lg font-semibold">{proj.name}</h3>
-                  <p className="text-sm text-gray-600">{proj.desc}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h2 className="mb-4 text-2xl font-bold">项目经历</h2>
+          <ul className="space-y-6">
+            {projectExperiences.map((proj, idx) => (
+              <li key={idx}>
+                <h3 className="text-lg font-semibold">{proj.name}</h3>
+                <p className="text-sm text-gray-600">{proj.desc}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

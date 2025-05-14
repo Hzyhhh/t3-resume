@@ -7,6 +7,7 @@ import { api, HydrateClient } from "~/trpc/server";
 
 import { Section } from "./_components/MenuDialog";
 import Project from "./_components/Project.mobile";
+import Experiences from "./_components/Experiences.mobile";
 
 export default async function Home() {
   // const session = await auth();
@@ -38,18 +39,24 @@ export default async function Home() {
         <Section title="个人简历">
           <Resume />
         </Section>
-        <Section title="项目经历">
-          {/* <h2 className="text-2xl font-bold">第二页内容</h2> */}
-          {/* <p>这里是第二页的详细内容</p> */}
-          {isMobile && <Project />}
-        </Section>
+
+        {isMobile && (
+          <Section title="项目经历">
+            <Project />
+          </Section>
+        )}
+        {isMobile && (
+          <Section title="工作经历">
+            <Experiences />
+          </Section>
+        )}
         <Section title="作品集">
           {/* <h2 className="text-2xl font-bold">第三页内容</h2> */}
-          <p>这里是第三页的详细内容</p>
+          <p>这里是作品集的详细内容</p>
         </Section>
 
         {/* 固定在右下角的访问统计 */}
-        <div className="fixed bottom-8 left-8 rounded-lg bg-white/80 p-4 shadow-lg backdrop-blur-sm dark:bg-black/80">
+        <div className="fixed bottom-2 right-4 rounded-lg bg-white/80 p-2 shadow-lg backdrop-blur-sm dark:bg-black/80">
           <p>总访问量：{stats.totalViews}</p>
           <p>独立访客：{stats.uniqueVisitors}</p>
         </div>

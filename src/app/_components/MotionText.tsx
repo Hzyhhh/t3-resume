@@ -10,7 +10,7 @@ interface MotionTextProps {
 }
 
 const MotionText: React.FC<MotionTextProps> = ({
-  className,
+  className = "",
   text,
   speed = 20,
 }) => {
