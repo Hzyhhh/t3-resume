@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import MotionText from "./MotionText";
-import Experiences from "./Experiences.mobile"; // 新增引入
 
 const Resume = () => {
   return (
