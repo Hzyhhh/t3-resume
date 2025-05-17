@@ -120,7 +120,10 @@ const Project = () => {
       <h2 className="mb-4 text-2xl font-bold">项目经历</h2>
       <ul className="space-y-6">
         {projectExperiences.map((proj, idx) => (
-          <li key={idx}>
+          <li
+            key={idx}
+            className="max-h-[300px] overflow-y-auto"
+          >
             <h3 className="text-lg font-semibold">{proj.name}</h3>
             <p className="text-sm text-gray-600">{proj.desc}</p>
           </li>

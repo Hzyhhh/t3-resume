@@ -17,9 +17,9 @@ const workExperiences = [
 ];
 
 const Experiences = () => (
-  <div className="mt-6 flex flex-col gap-8 md:mt-12 md:flex-row">
+  <div className="flex flex-col gap-8 md:mt-2 md:flex-row">
     <div className="w-full">
-      <h2 className="mb-4 text-xl font-bold md:text-2xl">工作经历</h2>
+      <h2 className="mb-4 text-xl font-bold md:text-xl">工作经历</h2>
       <ol className="relative border-l-2 border-gray-300">
         {workExperiences.map((exp, idx) => (
           <li className="relative mb-6 pl-6 md:mb-8" key={idx}>
