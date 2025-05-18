@@ -120,12 +120,13 @@ const Project = () => {
       <h2 className="mb-4 text-2xl font-bold">项目经历</h2>
       <ul className="space-y-6">
         {projectExperiences.map((proj, idx) => (
-          <li
-            key={idx}
-            className="max-h-[300px] overflow-y-auto"
-          >
-            <h3 className="text-lg font-semibold">{proj.name}</h3>
-            <p className="text-sm text-gray-600">{proj.desc}</p>
+          <li key={idx} className="relative max-h-[300px]">
+            <h3 className="sticky top-0 z-10 py-2 text-lg font-semibold">
+              {proj.name}
+            </h3>
+            <div className="max-h-[calc(300px-3rem)] overflow-y-auto">
+              <p className="text-sm text-gray-600">{proj.desc}</p>
+            </div>
           </li>
         ))}
       </ul>

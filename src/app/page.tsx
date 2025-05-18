@@ -35,7 +35,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <div className="h-screen w-full snap-y snap-mandatory overflow-y-scroll">
+      <div className="scrollbar h-screen w-full snap-y snap-mandatory overflow-y-scroll">
         <Section title="个人简历">
           <Resume />
         </Section>
