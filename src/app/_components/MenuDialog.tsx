@@ -19,12 +19,13 @@ const letterVariants = {
 interface SectionProps {
   children?: React.ReactNode;
   title?: React.ReactNode;
+  className?: string;
 }
 
 export function Section(props: SectionProps) {
   return (
     <motion.section
-      className="flex p-6 h-screen w-full snap-start flex-col bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white"
+      className={`flex p-6 h-screen w-full snap-start flex-col bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white ${props.className ?? ""}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}

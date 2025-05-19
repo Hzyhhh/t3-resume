@@ -35,30 +35,30 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <div className="scrollbar h-screen w-full snap-y snap-mandatory overflow-y-scroll">
-        <Section title="个人简历">
+      <div className="scrollbar h-screen w-full snap-y snap-mandatory overflow-y-scroll bg-white dark:bg-gray-900">
+        <Section title="个人简历" className="min-h-screen">
           <Resume />
         </Section>
 
         {isMobile && (
-          <Section title="项目经历">
+          <Section title="项目经历" className="min-h-screen">
             <Project />
           </Section>
         )}
         {isMobile && (
-          <Section title="工作经历">
+          <Section title="工作经历" className="min-h-screen">
             <Experiences />
           </Section>
         )}
-        <Section title="作品集">
-          {/* <h2 className="text-2xl font-bold">第三页内容</h2> */}
-          <p>这里是作品集的详细内容</p>
+        <Section title="作品集" className="min-h-screen">
+          <div className="container mx-auto px-4 py-8">
+            <p className="text-lg text-gray-700 dark:text-gray-300">这里是作品集的详细内容</p>
+          </div>
         </Section>
 
-        {/* 固定在右下角的访问统计 */}
-        <div className="fixed bottom-2 right-4 rounded-lg bg-white/80 p-2 shadow-lg backdrop-blur-sm dark:bg-black/80">
-          <p>总访问量：{stats.totalViews}</p>
-          <p>独立访客：{stats.uniqueVisitors}</p>
+        <div className="fixed bottom-4 right-4 rounded-lg bg-white/90 p-3 shadow-lg backdrop-blur-sm dark:bg-gray-800/90">
+          <p className="text-sm text-gray-700 dark:text-gray-300">总访问量：{stats.totalViews}</p>
+          <p className="text-sm text-gray-700 dark:text-gray-300">独立访客：{stats.uniqueVisitors}</p>
         </div>
       </div>
     </HydrateClient>
