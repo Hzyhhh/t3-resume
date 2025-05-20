@@ -13,8 +13,8 @@ const Resume = () => {
           <Image
             src="/images/IMG_4154.JPG"
             alt=""
-            width={250}
-            height={250}
+            width={200}
+            height={200}
             className="rounded-lg object-cover"
             draggable={false}
           />
