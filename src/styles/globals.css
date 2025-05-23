@@ -11,11 +11,11 @@
 /* 滚动条样式 */
 .scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #e5e7eb transparent;
+  scrollbar-color: #6b7280 transparent;
 }
 
 .scrollbar:hover {
-  scrollbar-color: #6b7280 transparent;
+  scrollbar-color: #e5e7eb transparent;
 }
 
 .scrollbar::-webkit-scrollbar {

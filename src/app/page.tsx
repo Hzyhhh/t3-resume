@@ -52,13 +52,19 @@ export default async function Home() {
         )}
         <Section title="作品集" className="min-h-screen">
           <div className="container mx-auto px-4 py-8">
-            <p className="text-lg text-gray-700 dark:text-gray-300">这里是作品集的详细内容</p>
+            <p className="text-lg text-gray-700 dark:text-gray-300">
+              这里是作品集的详细内容
+            </p>
           </div>
         </Section>
 
-        <div className="fixed bottom-4 right-4 rounded-lg bg-white/90 p-3 shadow-lg backdrop-blur-sm dark:bg-gray-800/90">
-          <p className="text-sm text-gray-700 dark:text-gray-300">总访问量：{stats.totalViews}</p>
-          <p className="text-sm text-gray-700 dark:text-gray-300">独立访客：{stats.uniqueVisitors}</p>
+        <div className="fixed right-4 bottom-4 rounded-lg bg-white/90 p-3 shadow-lg backdrop-blur-sm dark:bg-gray-800/90">
+          <p className="text-sm text-gray-700 dark:text-gray-300">
+            总访问量：{stats.totalViews}
+          </p>
+          <p className="text-sm text-gray-700 dark:text-gray-300">
+            独立访客：{stats.uniqueVisitors}
+          </p>
         </div>
       </div>
     </HydrateClient>

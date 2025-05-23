@@ -28,6 +28,10 @@ const projectExperiences = [
     name: "企业门户网站重构",
     desc: "主导前端重构，优化页面性能与SEO，提升用户体验。",
   },
+  {
+    name: "app分发网站使用Nextjs重构",
+    desc: "负责项目前后端重构，主导将遗留.NET系统重构为Next.js应用，解决10+未维护接口的安全风险，设计基于App Router的现代化架构，代码复用率提升70%，减少50%的跨团队协作成本，实现SSR/ISR混合渲染，首屏性能提升3倍",
+  },
 ];
 
 const Project = () => (
