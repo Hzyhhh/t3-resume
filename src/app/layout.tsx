@@ -1,36 +1,38 @@
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "~/styles/globals.css";
-
-import { type Metadata } from "next";
-import localFont from "next/font/local";
-
+import ThemeProvider from "~/components/theme-provider";
+import { HydrateClient } from "~/trpc/server";
 import { TRPCReactProvider } from "~/trpc/react";
 
-export const metadata: Metadata = {
-  title: "个人简历",
-  description: "个人简历和作品集展示",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-};
+const inter = Inter({ subsets: ["latin"] });
 
-const fusionPixel = localFont({
-  src: [
-    {
-      // path: "/fonts/fusion-pixel-12px.woff2",
-      path: "../../public/fonts/fusion-pixel-12px.woff2",
-      weight: "400",
-      style: "normal",
-    },
-  ],
-  display: "swap",
-});
+export const metadata: Metadata = {
+  title: "个人简历 | Web开发工程师",
+  description: "Web开发工程师个人简历网站，展示项目经历、工作经历和作品集",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="zh-CN" className="h-full">
-      <body className={`${fusionPixel.className} h-full antialiased`}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+    <html lang="zh" suppressHydrationWarning>
+      <body className={inter.className}>
+        <TRPCReactProvider>
+          <HydrateClient>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </HydrateClient>
+        </TRPCReactProvider>
       </body>
     </html>
   );
