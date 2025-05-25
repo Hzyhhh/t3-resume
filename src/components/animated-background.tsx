@@ -34,7 +34,7 @@ export default function AnimatedBackground() {
     const colors = isDark ? ["#0f172a", "#1e293b", "#334155"] : ["#f8fafc", "#f1f5f9", "#e2e8f0"]
 
     // Create gradient points
-    const points = []
+    const points: { x: number; y: number; vx: number; vy: number; radius: number; color: string | undefined }[] = []
     for (let i = 0; i < 5; i++) {
       points.push({
         x: Math.random() * width,
