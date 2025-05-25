@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import AnimatedElement from "~/components/animated-element";
-import { Card, CardContent } from "~/components/ui/card";
+// import { Card, CardContent } from "~/components/ui/card";
 
 export default function AboutSection() {
   return (
@@ -41,7 +41,7 @@ export default function AboutSection() {
           >
             <p className="text-lg">
               28岁,
-              6年前端开发经验，熟悉React、Next.js、ReactNative、Vue等框架。
+              6年前端开发经验，熟练使用React、Next.js、ReactNative、Vue等框架。
             </p>
           </AnimatedElement>
 
@@ -52,10 +52,6 @@ export default function AboutSection() {
           <AnimatedElement animation="fade-in" delay={1}>
             {/* <h3 className="section-subtitle">学历背景</h3> */}
             <div className="space-y-4">
-              {/* <div>
-                    <h4 className="font-semibold">计算机科学与技术 | 硕士学位</h4>
-                    <p className="text-muted-foreground">某知名大学 | 2014-2017</p>
-                  </div> */}
               <div>
                 <h4 className="font-semibold">北京理工大学珠海学院</h4>
                 <p className="text-muted-foreground">

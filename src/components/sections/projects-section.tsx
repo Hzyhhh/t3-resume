@@ -13,59 +13,65 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "电商平台重构",
+    title: "App分发平台重构",
     description:
-      "使用Next.js和TypeScript重构传统电商平台，提升了50%的页面加载速度和SEO表现。实现了SSR和ISR，优化了移动端体验。",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
+      "负责项目前后端重构，独立开发遗留的.NET+React应用重构为Next.js应用，解决10+未维护接口的安全风险，基于现代化架构重用数据表，代码复用率提升70%，减少50%的跨端协作成本。实现SSR/ISR混合渲染，首屏性能提升3倍",
+    technologies: ["Next.js", "TypeScript", "drizzle-orm", "trpc", "zod"],
   },
   {
-    title: "企业管理系统",
+    title: "云南国投隐患排查管控 ",
     description:
-      "开发了一套完整的企业资源管理系统，包括人事管理、财务报表、库存管理等模块。使用微服务架构，前端采用Vue.js。",
-    technologies: ["Vue.js", "Node.js", "Express", "MongoDB"],
+      "从需求分析到开发落地全流程跟进，实现定位模块、webview高德地图模块。App采用ReactNative、前端采用Vue。",
+    technologies: ["Vue", "React Native", "geolocation", "AMap", "TypeScript"],
   },
   {
-    title: "社交媒体应用",
+    title: "跨平台开发框架建设",
     description:
-      "构建了一个具有实时聊天功能的社交媒体应用，支持图片和视频分享，使用WebSocket实现即时通讯。",
-    technologies: ["React", "Socket.io", "Firebase", "Material UI"],
+      "20+个高复用业务组件设计开发、Sentry 错误追踪、CI/CD、不同RN版本打包控制等",
+    technologies: ["React Native", "ui-kitten"],
   },
   {
-    title: "在线教育平台",
+    title: "智能监控TV应用",
     description:
-      "开发了一个在线教育平台，支持视频课程、直播教学和在线测验。实现了自适应学习路径和个性化推荐系统。",
-    technologies: ["React", "Node.js", "PostgreSQL", "WebRTC"],
+      "使用ReactNative开发TV大屏，rn-vlcplayer对接rtmp流媒体实现多路视频直播，监听电视遥控器事件实现VLC播放器视频进度定位",
+    technologies: [
+      "React Native",
+      "RN-TV",
+      "RN-UILib",
+      "rn-vlc-player",
+      "rtmp",
+    ],
   },
   {
-    title: "健康追踪应用",
+    title: "武汉宝钢启停机系统管控",
     description:
-      "设计并开发了一款健康追踪应用，支持活动记录、饮食管理和睡眠分析。集成了多种可穿戴设备的数据同步。",
-    technologies: ["React Native", "GraphQL", "AWS", "Firebase"],
+      "开发了一套完整的启停机操作票业务，包括标准模版模块、离线执行数据回传模块、多媒体管理模块、流程审批模块、MQTT同步模块、硬件设备数据下发等模块。App采用ReactNative、前端采用Vue。",
+    technologies: ["React Native", "Vue", "MQTT", "RN-BLE", "RN-Vision-camera"],
   },
   {
-    title: "金融数据分析工具",
+    title: "雅砻江定期工作调度",
     description:
-      "构建了一个金融数据分析工具，提供实时市场数据、技术指标计算和可视化图表。支持自定义警报和策略回测。",
-    technologies: ["Vue.js", "D3.js", "Express", "MongoDB"],
+      "使用动态JSON schema解析luckysheet表单生成App表单，高性能长列表解决方案，配合memo、immerjs等工具优化数据重渲染问题，实现10k+表单项流畅滚动、并提升项目可读性",
+    technologies: ["React Native", "immer", "superJson", "@shopify/flash-list"],
   },
   {
-    title: "智能家居控制系统",
+    title: "安庆门禁出入厂管理",
     description:
-      "开发了一套智能家居控制系统，支持多种设备的远程控制和自动化场景设置。实现了语音控制和能源使用分析。",
-    technologies: ["React", "Node.js", "MQTT", "TensorFlow.js"],
+      "RFID设备统计人员进出情况。rn-Echarts开发App图表展示，结合moti、navitewind等工具增强动效交互体验",
+    technologies: ["React Native", "moti", "navitewind", "RN-echarts"],
   },
-  {
-    title: "旅游规划应用",
-    description:
-      "设计了一款旅游规划应用，提供目的地推荐、行程规划和预订服务。集成了地图服务和用户评价系统。",
-    technologies: ["React Native", "GraphQL", "MongoDB", "Google Maps API"],
-  },
-  {
-    title: "内容管理系统",
-    description:
-      "开发了一个灵活的内容管理系统，支持多种内容类型和自定义工作流。实现了版本控制和多语言支持。",
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-  },
+  // {
+  //   title: "旅游规划应用",
+  //   description:
+  //     "设计了一款旅游规划应用，提供目的地推荐、行程规划和预订服务。集成了地图服务和用户评价系统。",
+  //   technologies: ["React Native", "GraphQL", "MongoDB", "Google Maps API"],
+  // },
+  // {
+  //   title: "内容管理系统",
+  //   description:
+  //     "开发了一个灵活的内容管理系统，支持多种内容类型和自定义工作流。实现了版本控制和多语言支持。",
+  //   technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+  // },
 ];
 
 export default function ProjectsSection() {
@@ -95,7 +101,7 @@ export default function ProjectsSection() {
                 <Card className="flex h-full flex-col">
                   <CardHeader className="flex-grow-0">
                     <CardTitle className="text-lg">{project.title}</CardTitle>
-                    <CardDescription className="line-clamp-2 h-10">
+                    <CardDescription className="line-clamp-4 h-10">
                       {project.description}
                     </CardDescription>
                   </CardHeader>
