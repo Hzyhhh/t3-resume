@@ -41,7 +41,7 @@ export default function ThemeToggle() {
             <h3 className="font-medium mb-2">扫码联系我</h3>
             <div className="bg-white p-2 rounded-md">
               <Image
-                src="/placeholder.svg?height=150&width=150"
+                src="/images/IMG_4137.jpg"
                 alt="联系二维码"
                 width={150}
                 height={150}
