@@ -136,106 +136,110 @@ export default function HobbiesSection() {
   return (
     <div className="section from-background to-muted/50 bg-gradient-to-b">
       <div className="section-content">
-        <AnimatedElement animation="fade-in">
+        {/* <AnimatedElement animation="fade-in">
           <h2 className="section-title">个人爱好</h2>
-        </AnimatedElement>
+        </AnimatedElement> */}
 
-        <div className="relative mx-auto my-12 max-w-4xl">
-          {/* 轮播控制按钮 */}
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute top-1/2 left-0 z-10 -translate-y-1/2 rounded-full"
-            onClick={prevSlide}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
+        {false && (
+          <div className="relative mx-auto my-12 max-w-4xl">
+            {/* 轮播控制按钮 */}
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute top-1/2 left-0 z-10 -translate-y-1/2 rounded-full"
+              onClick={prevSlide}
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
 
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute top-1/2 right-0 z-10 -translate-y-1/2 rounded-full"
-            onClick={nextSlide}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute top-1/2 right-0 z-10 -translate-y-1/2 rounded-full"
+              onClick={nextSlide}
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
 
-          {/* 轮播内容 */}
-          <div
-            ref={carouselRef}
-            className="overflow-hidden px-12"
-            style={{ height: carouselHeight ? `${carouselHeight}px` : "auto" }}
-          >
-            <div className="flex items-center justify-center gap-4">
-              <AnimatePresence mode="popLayout">
-                {visibleHobbies.map((hobby, index) => {
-                  const isCenter = index === 1;
+            {/* 轮播内容 */}
+            <div
+              ref={carouselRef}
+              className="overflow-hidden px-12"
+              style={{
+                height: carouselHeight ? `${carouselHeight}px` : "auto",
+              }}
+            >
+              <div className="flex items-center justify-center gap-4">
+                <AnimatePresence mode="popLayout">
+                  {visibleHobbies.map((hobby, index) => {
+                    const isCenter = index === 1;
 
-                  return (
-                    <motion.div
-                      key={`${currentIndex}-${index}`}
-                      initial={{
-                        opacity: 0,
-                        scale: 0.8,
-                        x: index === 0 ? -100 : index === 2 ? 100 : 0,
-                      }}
-                      animate={{
-                        opacity: isCenter ? 1 : 0.7,
-                        scale: isCenter ? 1 : 0.85,
-                        x: 0,
-                      }}
-                      exit={{
-                        opacity: 0,
-                        scale: 0.8,
-                        x: index === 0 ? 100 : index === 2 ? -100 : 0,
-                      }}
-                      transition={{ duration: 0.5 }}
-                      className={`${isCenter ? "z-10" : "z-0"} hobby-card`}
-                    >
-                      <Card
-                        className={`w-full ${isCenter ? "shadow-lg" : "shadow-md"}`}
+                    return (
+                      <motion.div
+                        key={`${currentIndex}-${index}`}
+                        initial={{
+                          opacity: 0,
+                          scale: 0.8,
+                          x: index === 0 ? -100 : index === 2 ? 100 : 0,
+                        }}
+                        animate={{
+                          opacity: isCenter ? 1 : 0.7,
+                          scale: isCenter ? 1 : 0.85,
+                          x: 0,
+                        }}
+                        exit={{
+                          opacity: 0,
+                          scale: 0.8,
+                          x: index === 0 ? 100 : index === 2 ? -100 : 0,
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className={`${isCenter ? "z-10" : "z-0"} hobby-card`}
                       >
-                        <CardContent className="flex flex-col items-center p-6 text-center">
-                          <div
-                            className={`bg-primary/10 text-primary mb-4 rounded-full p-4 ${
-                              isCenter ? "scale-100" : "scale-90"
-                            }`}
-                          >
-                            {hobby?.icon}
-                          </div>
-                          <h3 className="mb-2 text-xl font-semibold">
-                            {hobby?.title}
-                          </h3>
-                          <p
-                            className={`${isCenter ? "text-foreground" : "text-muted-foreground"}`}
-                          >
-                            {hobby?.description}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  );
-                })}
-              </AnimatePresence>
+                        <Card
+                          className={`w-full ${isCenter ? "shadow-lg" : "shadow-md"}`}
+                        >
+                          <CardContent className="flex flex-col items-center p-6 text-center">
+                            <div
+                              className={`bg-primary/10 text-primary mb-4 rounded-full p-4 ${
+                                isCenter ? "scale-100" : "scale-90"
+                              }`}
+                            >
+                              {hobby?.icon}
+                            </div>
+                            <h3 className="mb-2 text-xl font-semibold">
+                              {hobby?.title}
+                            </h3>
+                            <p
+                              className={`${isCenter ? "text-foreground" : "text-muted-foreground"}`}
+                            >
+                              {hobby?.description}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* 指示器 */}
+            <div className="mt-6 flex justify-center gap-2">
+              {hobbies.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`h-2 w-2 rounded-full transition-all ${
+                    currentIndex === index
+                      ? "bg-primary w-4"
+                      : "bg-muted-foreground opacity-50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
-
-          {/* 指示器 */}
-          <div className="mt-6 flex justify-center gap-2">
-            {hobbies.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`h-2 w-2 rounded-full transition-all ${
-                  currentIndex === index
-                    ? "bg-primary w-4"
-                    : "bg-muted-foreground opacity-50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
+        )}
 
         <AnimatedElement
           animation="fade-in"

@@ -73,9 +73,9 @@ export default function FullPageScroll({ children }: FullPageScrollProps) {
 
       if (isScrolling) return;
 
-      if (e.deltaY > 50) {
+      if (e.deltaY > 200) {
         goToNextPage();
-      } else if (e.deltaY < -50) {
+      } else if (e.deltaY < -200) {
         goToPrevPage();
       }
     };

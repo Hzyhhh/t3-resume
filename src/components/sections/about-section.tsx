@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import AnimatedElement from "~/components/animated-element";
+import TypeWriter from "~/components/type-writer";
 // import { Card, CardContent } from "~/components/ui/card";
 
 export default function AboutSection() {
@@ -28,25 +29,25 @@ export default function AboutSection() {
           animation="slide-in-right"
           className="flex flex-col gap-6"
         >
-          <div>
-            <h1 className="mb-2 text-4xl font-bold md:text-5xl">黄梓阳</h1>
-            <h2 className="text-muted-foreground text-xl md:text-2xl">
+          <div className="mb-4">
+            <h1 className="mb-2 text-7xl font-bold md:text-7xl">黄梓阳</h1>
+            <h2 className="text-muted-foreground text-xl md:text-4xl">
               React/Vue开发工程师
             </h2>
           </div>
           <AnimatedElement
             animation="slide-in-right"
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 mb-4"
             delay={0.5}
           >
-            <p className="text-lg">
+            <p className="text-xl">
               28岁,
               6年前端开发经验，熟练使用React、Next.js、ReactNative、Vue等框架。
             </p>
           </AnimatedElement>
 
-          <h2 className="text-lg font-semibold">
-            Talk is cheap, show me your code
+          <h2 className="bg-gradient-to-r from-[#00E676] to-[#4FC3F7] bg-clip-text text-3xl font-bold text-transparent">
+            <TypeWriter text="Talk is cheap, show me your code" delay={100} />
           </h2>
 
           <AnimatedElement animation="fade-in" delay={1}>

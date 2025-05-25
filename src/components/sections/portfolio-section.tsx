@@ -307,125 +307,127 @@ const user: User = {
 
 const dependencies = [
   {
-    name: "React",
-    usageCount: 25,
-    description: "用于构建用户界面的JavaScript库，是我最常用的前端框架。",
-    proficiency: "专家" as const,
-  },
-  {
-    name: "Next.js",
-    usageCount: 18,
-    description:
-      "基于React的全栈框架，提供SSR、SSG等功能，是我构建现代Web应用的首选。",
-    proficiency: "专家" as const,
-  },
-  {
     name: "TypeScript",
-    usageCount: 22,
+    // usageCount: 32,
     description: "JavaScript的超集，添加了类型系统，提高了代码质量和开发效率。",
     proficiency: "高级" as const,
   },
   {
-    name: "Vue.js",
-    usageCount: 12,
-    description: "渐进式JavaScript框架，用于构建用户界面，API设计简洁直观。",
+    name: "React",
+    // usageCount: 25,
+    description: "用于构建用户界面的JavaScript库，是我最常用的前端框架。",
     proficiency: "高级" as const,
   },
   {
-    name: "Tailwind CSS",
-    usageCount: 15,
-    description: "实用优先的CSS框架，通过类名直接构建设计，加速UI开发。",
+    name: "ReactNative",
+    // usageCount: 25,
+    description: "一次学习，随处编写, 使用 React 来创建 Android 和 iOS 的原生应用",
     proficiency: "高级" as const,
   },
   {
-    name: "Framer Motion",
-    usageCount: 10,
-    description: "React动画库，用于创建流畅的UI动画和交互效果。",
-    proficiency: "中级" as const,
-  },
-  {
-    name: "GraphQL",
-    usageCount: 8,
-    description: "API查询语言，允许客户端精确指定所需数据，减少网络传输。",
-    proficiency: "中级" as const,
-  },
-  {
-    name: "PostgreSQL",
-    usageCount: 7,
-    description: "强大的开源关系型数据库，支持复杂查询和事务处理。",
-    proficiency: "中级" as const,
-  },
-  {
-    name: "Prisma",
-    usageCount: 6,
-    description: "现代数据库ORM工具，简化了数据库操作和类型安全。",
-    proficiency: "中级" as const,
-  },
-  {
-    name: "Drizzle",
-    usageCount: 4,
-    description: "TypeScript优先的ORM，提供类型安全的数据库查询构建器。",
-    proficiency: "中级" as const,
-  },
-  {
-    name: "Zod",
-    usageCount: 9,
-    description: "TypeScript优先的模式验证库，用于数据验证和类型推断。",
+    name: "Vue",
+    // usageCount: 18,
+    description:
+      "渐进式 JavaScript 框架",
     proficiency: "高级" as const,
   },
   {
-    name: "tRPC",
-    usageCount: 5,
-    description: "端到端类型安全的API框架，无需API文档或代码生成。",
-    proficiency: "中级" as const,
+    name: "Next.js",
+    // usageCount: 18,
+    description:
+      "基于React的全栈框架，提供SSR、SSG等功能，是我构建现代Web应用的首选。",
+    proficiency: "高级" as const,
   },
+  // {
+  //   name: "Vue.js",
+  //   // usageCount: 12,
+  //   description: "渐进式JavaScript框架，用于构建用户界面，API设计简洁直观。",
+  //   proficiency: "高级" as const,
+  // },
   {
-    name: "Supabase",
-    usageCount: 6,
-    description: "开源的Firebase替代品，提供数据库、认证和存储服务。",
-    proficiency: "中级" as const,
-  },
-  {
-    name: "Redux",
-    usageCount: 11,
+    name: "Mobx",
+    // usageCount: 11,
     description: "JavaScript应用的状态容器，提供可预测的状态管理。",
     proficiency: "高级" as const,
   },
   {
+    name: "Tailwind CSS",
+    // usageCount: 15,
+    description: "实用优先的CSS框架，通过类名直接构建设计，加速UI开发。",
+    proficiency: "中级" as const,
+  },
+  {
     name: "Webpack",
-    usageCount: 14,
+    // usageCount: 14,
     description: "静态模块打包工具，用于构建现代JavaScript应用。",
-    proficiency: "高级" as const,
-  },
-  {
-    name: "Jest",
-    usageCount: 13,
-    description: "JavaScript测试框架，专注于简单性，用于单元测试。",
     proficiency: "中级" as const,
   },
   {
-    name: "Cypress",
-    usageCount: 7,
-    description: "端到端测试框架，用于测试Web应用的用户流程。",
-    proficiency: "中级" as const,
+    name: "Moti",
+    // usageCount: 10,
+    description: "RN动画库，用于创建UI动画和交互效果。",
+    proficiency: "初级" as const,
   },
   {
-    name: "Docker",
-    usageCount: 9,
-    description: "容器化平台，用于构建、部署和运行应用。",
-    proficiency: "中级" as const,
+    name: "Postgre",
+    // usageCount: 7,
+    description: "强大的开源关系型数据库，支持复杂查询和事务处理。",
+    proficiency: "初级" as const,
   },
   {
-    name: "AWS",
-    usageCount: 8,
-    description: "云计算平台，提供各种基础设施和服务。",
-    proficiency: "中级" as const,
+    name: "Prisma",
+    // usageCount: 6,
+    description: "现代数据库ORM工具，简化了数据库操作和类型安全。",
+    proficiency: "初级" as const,
   },
+  {
+    name: "Drizzle",
+    // usageCount: 4,
+    description: "TypeScript优先的ORM，提供类型安全的数据库查询构建器。",
+    proficiency: "初级" as const,
+  },
+  {
+    name: "Zod",
+    // usageCount: 9,
+    description: "TypeScript优先的模式验证库，用于数据验证和类型推断。",
+    proficiency: "初级" as const,
+  },
+  {
+    name: "tRPC",
+    // usageCount: 5,
+    description: "端到端类型安全的API框架，无需API文档或代码生成。",
+    proficiency: "初级" as const,
+  },
+  {
+    name: "Supabase",
+    // usageCount: 6,
+    description: "开源的Firebase替代品，提供数据库、认证和存储服务。",
+    proficiency: "初级" as const,
+  },
+
+  // {
+  //   name: "Cypress",
+  //   // usageCount: 7,
+  //   description: "端到端测试框架，用于测试Web应用的用户流程。",
+  //   proficiency: "初级" as const,
+  // },
+  // {
+  //   name: "Docker",
+  //   // usageCount: 9,
+  //   description: "容器化平台，用于构建、部署和运行应用。",
+  //   proficiency: "初级" as const,
+  // },
+  // {
+  //   name: "AWS",
+  //   // usageCount: 8,
+  //   description: "云计算平台，提供各种基础设施和服务。",
+  //   proficiency: "初级" as const,
+  // },
   {
     name: "Vercel",
-    usageCount: 12,
+    // usageCount: 12,
     description: "前端部署和托管平台，专为现代Web应用设计。",
-    proficiency: "高级" as const,
+    proficiency: "初级" as const,
   },
 ];
 
@@ -469,7 +471,6 @@ export default function PortfolioSection() {
                     <h3 className="mb-4 text-xl font-semibold">技术栈与依赖</h3>
                     <p className="text-muted-foreground mb-6">
                       以下是我在项目中使用过的主要技术和库，圆圈大小表示使用频率，颜色表示熟练程度。
-                      将鼠标悬停在圆圈上可查看详细信息。
                     </p>
                     <div className="mt-8">
                       <DependencyBubble dependencies={dependencies} />
@@ -483,13 +484,13 @@ export default function PortfolioSection() {
                         <div className="h-3 w-3 rounded-full bg-green-500"></div>
                         <span className="text-sm">中级</span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      {/* <div className="flex items-center gap-2">
                         <div className="h-3 w-3 rounded-full bg-blue-500"></div>
                         <span className="text-sm">高级</span>
-                      </div>
+                      </div> */}
                       <div className="flex items-center gap-2">
                         <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-                        <span className="text-sm">专家</span>
+                        <span className="text-sm">高级</span>
                       </div>
                     </div>
                   </CardContent>
