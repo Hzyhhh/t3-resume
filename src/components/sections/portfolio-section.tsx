@@ -321,14 +321,14 @@ const dependencies = [
   {
     name: "ReactNative",
     // usageCount: 25,
-    description: "一次学习，随处编写, 使用 React 来创建 Android 和 iOS 的原生应用",
+    description:
+      "一次学习，随处编写, 使用 React 来创建 Android 和 iOS 的原生应用",
     proficiency: "高级" as const,
   },
   {
     name: "Vue",
     // usageCount: 18,
-    description:
-      "渐进式 JavaScript 框架",
+    description: "渐进式 JavaScript 框架",
     proficiency: "高级" as const,
   },
   {
@@ -441,126 +441,17 @@ export default function PortfolioSection() {
 
   return (
     <div className="section from-muted/50 to-background bg-gradient-to-b">
-      <div className="section-content h-full overflow-y-auto pb-12">
+      <div className="section-content h-full overflow-y-auto">
         <AnimatedElement animation="fade-in">
           <h2 className="section-title sticky top-0 z-10 pt-4 pb-6 backdrop-blur-sm">
             作品集
           </h2>
         </AnimatedElement>
+      </div>
 
+      <div className="mx-auto grid max-h-[calc(100vh-200px)] max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <AnimatedElement animation="slide-up">
-          <Tabs defaultValue="dependencies" className="w-full">
-            <TabsList className="bg-background/80 sticky top-[80px] z-10 grid w-full grid-cols-2 backdrop-blur-sm">
-              <TabsTrigger
-                value="dependencies"
-                className="flex items-center gap-2"
-              >
-                <Code className="h-4 w-4" />
-                <span className="hidden sm:inline">技术栈</span>
-              </TabsTrigger>
-              <TabsTrigger value="articles" className="flex items-center gap-2">
-                <FileText className="h-4 w-4" />
-                <span className="hidden sm:inline">技术文章</span>
-              </TabsTrigger>
-            </TabsList>
-
-            <div className="mt-6 max-h-[calc(100vh-250px)] overflow-y-auto pr-2">
-              <TabsContent value="dependencies">
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="mb-4 text-xl font-semibold">技术栈与依赖</h3>
-                    <p className="text-muted-foreground mb-6">
-                      以下是我在项目中使用过的主要技术和库，圆圈大小表示使用频率，颜色表示熟练程度。
-                    </p>
-                    <div className="mt-8">
-                      <DependencyBubble dependencies={dependencies} />
-                    </div>
-                    <div className="mt-4 flex justify-center gap-6">
-                      <div className="flex items-center gap-2">
-                        <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                        <span className="text-sm">初级</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                        <span className="text-sm">中级</span>
-                      </div>
-                      {/* <div className="flex items-center gap-2">
-                        <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-                        <span className="text-sm">高级</span>
-                      </div> */}
-                      <div className="flex items-center gap-2">
-                        <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-                        <span className="text-sm">高级</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="articles">
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                  <div className="md:col-span-1">
-                    <Card className="h-full">
-                      <CardContent className="p-4">
-                        <h3 className="mb-4 text-lg font-semibold">文章目录</h3>
-                        <ul className="space-y-2">
-                          {articles.map((article) => (
-                            <li key={article.id}>
-                              <button
-                                onClick={() => setSelectedArticle(article.id)}
-                                className={`w-full rounded-md px-3 py-2 text-left transition-colors ${
-                                  selectedArticle === article.id
-                                    ? "bg-primary text-primary-foreground"
-                                    : "hover:bg-muted"
-                                }`}
-                              >
-                                <div className="font-medium">
-                                  {article.title}
-                                </div>
-                                <div
-                                  className={`text-sm ${
-                                    selectedArticle === article.id
-                                      ? "text-primary-foreground/80"
-                                      : "text-muted-foreground"
-                                  }`}
-                                >
-                                  {article.summary}
-                                </div>
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <Card className="h-full">
-                      <CardContent className="p-6">
-                        {currentArticle ? (
-                          <div className="prose dark:prose-invert max-w-none">
-                            <ReactMarkdown>
-                              {currentArticle.content}
-                            </ReactMarkdown>
-                          </div>
-                        ) : (
-                          <div className="flex h-full flex-col items-center justify-center py-12 text-center">
-                            <FileText className="text-muted-foreground mb-4 h-16 w-16" />
-                            <h3 className="mb-2 text-xl font-medium">
-                              选择一篇文章
-                            </h3>
-                            <p className="text-muted-foreground">
-                              从左侧目录中选择一篇文章以查看详细内容
-                            </p>
-                          </div>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </TabsContent>
-            </div>
-          </Tabs>
+          <DependencyBubble dependencies={dependencies} />
         </AnimatedElement>
       </div>
     </div>

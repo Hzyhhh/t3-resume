@@ -59,51 +59,47 @@ const experiences = [
 export default function ExperienceSection() {
   return (
     <div className="section from-background to-muted/50 bg-gradient-to-b">
-      <div className="section-content h-full overflow-y-auto pb-12">
+      <div className="section-content h-full overflow-y-auto">
         <AnimatedElement animation="fade-in">
           <h2 className="section-title bg-background/80 sticky top-0 z-10 pt-4 pb-6 backdrop-blur-sm">
             工作经历
           </h2>
         </AnimatedElement>
+      </div>
 
-        <div className="max-h-[calc(100vh-200px)] space-y-8 overflow-y-auto pr-2">
-          {experiences.map((exp, index) => (
-            <AnimatedElement
-              key={index}
-              animation="slide-up"
-              delay={index * 0.2}
-            >
-              <Card>
-                <CardHeader>
-                  <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-                    <div>
-                      <CardTitle>{exp.position}</CardTitle>
-                      <CardDescription>
-                        {exp.company} | {exp.period}
-                      </CardDescription>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech, i) => (
-                        <Badge key={i} variant="outline">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
+      <div className="max-h-[calc(100vh-200px)] space-y-8 overflow-y-auto pr-2">
+        {experiences.map((exp, index) => (
+          <AnimatedElement key={index} animation="slide-up" delay={index * 0.2}>
+            <Card>
+              <CardHeader>
+                <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <CardTitle>{exp.position}</CardTitle>
+                    <CardDescription>
+                      {exp.company} | {exp.period}
+                    </CardDescription>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-4">{exp.description}</p>
-                  <h4 className="mb-2 font-semibold">主要成就：</h4>
-                  <ul className="list-disc space-y-1 pl-5">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.technologies.map((tech, i) => (
+                      <Badge key={i} variant="outline">
+                        {tech}
+                      </Badge>
                     ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </AnimatedElement>
-          ))}
-        </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4">{exp.description}</p>
+                <h4 className="mb-2 font-semibold">主要成就：</h4>
+                <ul className="list-disc space-y-1 pl-5">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </AnimatedElement>
+        ))}
       </div>
     </div>
   );

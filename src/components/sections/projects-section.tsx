@@ -81,47 +81,46 @@ export default function ProjectsSection() {
     <div className="section from-muted/50 to-background overflow-auto bg-gradient-to-b">
       <div className="section-content max-h-[calc(100vh-200px)] overflow-y-auto">
         <AnimatedElement animation="fade-in">
-          <h2 className="section-title mb-12">项目经历</h2>
+          <h2 className="section-title">项目经历</h2>
         </AnimatedElement>
-
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="relative h-full"
-              onHoverStart={() => setHoveredIndex(index)}
-              onHoverEnd={() => setHoveredIndex(null)}
-              animate={{
-                scale: hoveredIndex === index ? 1.05 : 1,
-                zIndex: hoveredIndex === index ? 10 : 1,
-                transition: { duration: 0.2 },
-              }}
-            >
-              <AnimatedElement animation="slide-up" delay={index * 0.05}>
-                <Card className="flex h-full flex-col">
-                  <CardHeader className="flex-grow-0">
-                    <CardTitle className="text-lg">{project.title}</CardTitle>
-                    <CardDescription className="line-clamp-4 h-10">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex flex-grow flex-col justify-end">
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {project.technologies.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </AnimatedElement>
-            </motion.div>
-          ))}
-        </div>
+      </div>
+      <div className="mx-auto grid max-h-[calc(100vh-200px)] max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            className="relative h-full"
+            onHoverStart={() => setHoveredIndex(index)}
+            onHoverEnd={() => setHoveredIndex(null)}
+            animate={{
+              scale: hoveredIndex === index ? 1.05 : 1,
+              zIndex: hoveredIndex === index ? 10 : 1,
+              transition: { duration: 0.2 },
+            }}
+          >
+            <AnimatedElement animation="slide-up" delay={index * 0.05}>
+              <Card className="flex h-full flex-col">
+                <CardHeader className="flex-grow-0">
+                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                  <CardDescription className="line-clamp-4 h-10">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-grow flex-col justify-end">
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {project.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </AnimatedElement>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

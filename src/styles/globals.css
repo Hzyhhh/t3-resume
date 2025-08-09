@@ -61,15 +61,15 @@
 }
 
 .section {
-  @apply flex min-h-screen w-full flex-col items-center justify-center p-4 md:p-8 lg:p-12;
+  @apply flex min-h-screen w-full flex-col items-center p-4 md:p-8 lg:p-12;
 }
 
 .section-content {
-  @apply mx-auto w-full max-w-7xl;
+  @apply mx-auto w-full max-w-7xl pb-12;
 }
 
 .section-title {
-  @apply mb-8 text-center text-3xl font-bold md:text-4xl lg:text-5xl;
+  @apply h-14 mb-8 text-center text-3xl font-bold md:text-4xl lg:text-5xl;
 }
 
 .section-subtitle {

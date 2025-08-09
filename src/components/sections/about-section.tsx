@@ -7,7 +7,7 @@ import TypeWriter from "~/components/type-writer";
 
 export default function AboutSection() {
   return (
-    <div className="section from-background to-muted/50 bg-gradient-to-b">
+    <div className="section justify-center from-background to-muted/50 bg-gradient-to-b">
       <div className="section-content grid grid-cols-1 items-center gap-8 md:grid-cols-2">
         <AnimatedElement
           animation="slide-in-left"
