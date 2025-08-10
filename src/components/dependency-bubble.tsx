@@ -11,8 +11,9 @@ import {
 
 interface Dependency {
   name: string;
-  description: string;
+  description?: string;
   proficiency: "入门" | "初级" | "中级" | "高级";
+  link?: string;
 }
 
 interface DependencyBubbleProps {
@@ -99,6 +100,11 @@ export default function DependencyBubble({
                     whileHover={{
                       scale: 1.1,
                       transition: { duration: 0.2 },
+                    }}
+                    onClick={() => {
+                      if (dep.link) {
+                        window.open(dep.link, "_blank");
+                      }
                     }}
                     // onHoverStart={() => setHoveredDep(dep.name)}
                     // onHoverEnd={() => setHoveredDep(null)}

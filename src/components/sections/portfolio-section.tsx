@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import AnimatedElement from "~/components/animated-element";
-import { Card, CardContent } from "~/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { FileText, Code } from "lucide-react";
-import ReactMarkdown from "react-markdown";
+// import { Card, CardContent } from "~/components/ui/card";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+// import { FileText, Code } from "lucide-react";
+// import ReactMarkdown from "react-markdown";
 import DependencyBubble from "~/components/dependency-bubble";
 
 // 文章数据
@@ -307,10 +307,11 @@ const user: User = {
 
 const dependencies = [
   {
-    name: "TypeScript",
+    name: "一个博客网站",
     // usageCount: 32,
-    description: "JavaScript的超集，添加了类型系统，提高了代码质量和开发效率。",
+    // description: "一个博客网站",
     proficiency: "高级" as const,
+    link: "https://blog.cion.asia",
   },
   {
     name: "React",
@@ -449,7 +450,7 @@ export default function PortfolioSection() {
         </AnimatedElement>
       </div>
 
-      <div className="mx-auto grid max-h-[calc(100vh-200px)] max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-h-[calc(100vh-200px)] w-full grid-cols-1 gap-6">
         <AnimatedElement animation="slide-up">
           <DependencyBubble dependencies={dependencies} />
         </AnimatedElement>

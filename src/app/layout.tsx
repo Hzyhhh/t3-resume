@@ -9,8 +9,8 @@ import { TRPCReactProvider } from "~/trpc/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "个人简历 | Web开发工程师",
-  description: "Web开发工程师个人简历网站，展示项目经历、工作经历和作品集",
+  title: "个人简历 | 程序员",
+  description: "程序员个人简历网站，展示项目经历、工作经历和作品集",
 };
 
 export default function RootLayout({

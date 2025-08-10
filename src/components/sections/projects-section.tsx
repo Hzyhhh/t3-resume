@@ -28,7 +28,7 @@ const projects = [
     title: "跨平台开发框架建设",
     description:
       "20+个高复用业务组件设计开发、Sentry 错误追踪、CI/CD、不同RN版本打包控制等",
-    technologies: ["React Native", "ui-kitten"],
+    technologies: ["React Native", "ui-kitten", "TypeScript", 'Rollup'],
   },
   {
     title: "智能监控TV应用",

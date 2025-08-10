@@ -32,7 +32,7 @@ export default function AboutSection() {
           <div className="mb-4">
             <h1 className="mb-2 text-7xl font-bold md:text-7xl">黄梓阳</h1>
             <h2 className="text-muted-foreground text-xl md:text-4xl">
-              React/Vue开发工程师
+              React/Vue全栈开发
             </h2>
           </div>
           <AnimatedElement
@@ -42,7 +42,7 @@ export default function AboutSection() {
           >
             <p className="text-xl">
               28岁,
-              6年前端开发经验，熟练使用React、Next.js、ReactNative、Vue等框架。
+              6年前端开发经验，熟练使用Next.js、React、ReactNative、Vue等框架。
             </p>
           </AnimatedElement>
 
